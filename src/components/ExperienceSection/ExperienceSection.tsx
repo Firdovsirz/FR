@@ -35,8 +35,8 @@ export default function ExperienceSection() {
                 <h2>Experience</h2>
                 <div className={styles['experience-container']}>
                     {experiences.map((item, index) => (
-                        <div className={styles['experience-full']} key={index}>
-                            <div className={styles['experience']}>
+                        <div className={styles['experience-full']} key={index} onClick={() => handleDropdown(index)}>
+                            <div className={styles['experience']} >
                                 <h3>{item.title}</h3>
                                 <div>
                                     <div>
@@ -46,7 +46,6 @@ export default function ExperienceSection() {
                                     <KeyboardArrowDownIcon
                                         style={openDropdown === index ? { rotate: "180deg" } : undefined}
                                         className={styles['experience-dropdown-icon']}
-                                        onClick={() => handleDropdown(index)}
                                     />
                                 </div>
                             </div>
