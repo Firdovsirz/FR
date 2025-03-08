@@ -32,7 +32,7 @@ export default function FAQ() {
                             <div className={styles['question-main-container']} key={index}>
                                 <div className={styles['question-head-container']}>
                                     <h3>{item.question}</h3>
-                                    <KeyboardArrowDownIcon className={styles['faq-dropdown-icon']} onClick={() => handleDropdown(index)} />
+                                    <KeyboardArrowDownIcon style={openDropdown === index ? { rotate: "180deg" } : undefined} className={styles['faq-dropdown-icon']} onClick={() => handleDropdown(index)} />
                                 </div>
                                 <div style={
                                     openDropdown === index ? { marginTop: 0, opacity: 1 } : { marginTop: "-50px", opacity: 0 }

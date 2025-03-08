@@ -35,8 +35,8 @@ export default function ExperienceSection() {
                 <h2>Experience</h2>
                 <div className={styles['experience-container']}>
                     {experiences.map((item, index) => (
-                        <div className={styles['experience-full']}>
-                            <div className={styles['experience']} key={index}>
+                        <div className={styles['experience-full']} key={index}>
+                            <div className={styles['experience']}>
                                 <h3>{item.title}</h3>
                                 <div>
                                     <div>
