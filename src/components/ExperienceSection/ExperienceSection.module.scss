@@ -1,0 +1,106 @@
+.experience-section {
+    width: 100%;
+    padding: 50px 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+    .experience-main-container {
+        width: 90%;
+
+        h2 {
+            font-size: 45px;
+            font-weight: 400;
+            color: rgba(231, 231, 231, 0.75);
+            margin-bottom: 30px;
+        }
+
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .experience-full {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 2px solid #9a9a9a;
+                padding: 20px;
+
+                .experience {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-block: 40px;
+                    padding: 20px;
+
+                    h3 {
+                        color: rgba(245, 245, 245, 0.75);
+                        font-size: 30px;
+                        font-weight: 400;
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            margin-right: 30px;
+
+                            h3 {
+                                font-size: 25px;
+                                margin-bottom: 10px;
+                            }
+
+                            p {
+                                color: #9a9a9a;
+                                font-size: 18px;
+                            }
+                        }
+
+                        .experience-dropdown-icon {
+                            color: #9a9a9a;
+                            font-size: 40px;
+                            transition: all 400ms;
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+                .experience-additional-details {
+                    transition: all 400ms;
+                    padding-inline: 20px;
+
+                    h3 {
+                        font-size: 25px;
+                        color: rgba(245, 245, 245, 0.75);
+                        font-weight: 400;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        font-size: 25px;
+                        color: rgba(245, 245, 245, 0.75);
+                        font-weight: 400;
+                        margin-block: 10px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        color: rgba(245, 245, 245, 0.75);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.description-section {
+    width: 100%;
+    height: 400px;
+    margin-top: 1900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .description-container{
+        width: 50%;
+        h2{
+            text-align: center;
+            line-height: 3cap;
+            font-size: 30px;
+            color: #a5a5a5;
+            font-weight: 400;
+            span{
+                border: 1px solid #fff;
+                padding: 5px 10px;
+                border-radius: 20px;
+                background-color: var(--token-4f2840f6-2bd3-49eb-b5e4-0d236a208b38, rgb(0, 0, 0));
+                border-radius: 427px;
+                opacity: 1;
+                transform: none;
+                transform-origin: 50% 50%;
+                will-change: transform;
+                margin-inline: 10px;
+                font-size: 25px;
+                color: rgb(173, 173, 173);
+            }
+        }
+    }
+}
