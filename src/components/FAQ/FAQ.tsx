@@ -1,10 +1,10 @@
 "use client";
 
 import styles from "./FAQ.module.scss";
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-export default function FAQ() {
+const FAQ = forwardRef<HTMLElement>((props, ref) => {
     const questions = [
         {
             question: "What technologies do you specialize in?",
@@ -23,14 +23,14 @@ export default function FAQ() {
         setOpenDropdown(openDropdown === index ? null : index);
     }
     return (
-        <section className={styles['faq-section']}>
+        <section ref={ref} className={styles['faq-section']}>
             <div className={styles['faq-container']}>
                 <h2>Frequently asked questions</h2>
                 <div className={styles['questions-container']}>
                     {questions.map((item, index) => {
                         return (
                             <div className={styles['question-main-container']} key={index}>
-                                <div className={styles['question-head-container']}>
+                                <div className={styles['question-head-container']}> 
                                     <h3>{item.question}</h3>
                                     <KeyboardArrowDownIcon style={openDropdown === index ? { rotate: "180deg" } : undefined} className={styles['faq-dropdown-icon']} onClick={() => handleDropdown(index)} />
                                 </div>
@@ -45,5 +45,7 @@ export default function FAQ() {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+});
+
+export default FAQ;

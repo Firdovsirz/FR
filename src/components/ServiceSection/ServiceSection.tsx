@@ -54,7 +54,7 @@ const ScrollCards: React.FC = () => {
                     const brightnessFilter = brightness.get();
 
                     return (
-                        <motion.div key={card.id} className={styles.card} style={{ paddingTop: `${20 + index * 20}px` }}>
+                        <motion.div key={card.id} className={styles.card} style={{ paddingTop: `${40 + index * 20}px` }}>
                             <motion.div className={styles.cardInner} style={{ scale, filter: `brightness(${brightnessFilter})` }}>
                                 <div className={styles.cardContent}>
                                     <h1 className={styles.cardTitle}>{card.title}</h1>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, {useRef} from 'react';
 import FAQ from '@/components/FAQ/FAQ';
 import styles from "./Home.module.scss";
 import Header from '@/components/Header/Header';
@@ -12,15 +12,25 @@ import DescriptionSection from '@/components/DescriptionSection/DescriptionSecti
 import ExperienceSection from '@/components/ExperienceSection/ExperienceSection';
 
 export default function Home() {
+  const experienceRef = useRef<HTMLElement>(null!);
+  const faqRef = useRef<HTMLElement>(null!);
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className={styles['home-container']}>
-      <Header />
+      <Header scrollToSection={scrollToSection} 
+        experienceRef={experienceRef} 
+        faqRef={faqRef}/>
       <IntroSection />
       <ServiceSection />
       <DescriptionSection />
       <SkillsSection />
-      <ExperienceSection />
-      <FAQ />
+      <ExperienceSection ref={experienceRef}/>
+      <FAQ ref={faqRef}/>
       <Footer />
     </div>
   )
