@@ -5,15 +5,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .description-container{
+
+    @media (max-width: 1000px) {
+        margin-top: 2300px;
+        padding: 30px;
+    }
+
+    .description-container {
         width: 50%;
-        h2{
+
+        @media (max-width: 1000px) {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+        }
+
+        h2 {
             text-align: center;
-            line-height: 3cap;
+            line-height: 4cap;
             font-size: 30px;
             color: #a5a5a5;
             font-weight: 400;
-            span{
+            word-break: keep-all;
+            /* Prevents breaking words */
+            white-space: nowrap;
+
+            @media (max-width: 1000px) {
+                font-size: 15px;
+            }
+
+            span {
                 min-width: 400px;
                 border: 1px solid #fff;
                 padding: 5px 10px;
@@ -27,6 +50,12 @@
                 margin-inline: 10px;
                 font-size: 25px;
                 color: rgb(173, 173, 173);
+                white-space: nowrap;
+
+                @media (max-width: 1000px) {
+                    font-size: 15px;
+                    white-space: normal;
+                }
             }
         }
     }

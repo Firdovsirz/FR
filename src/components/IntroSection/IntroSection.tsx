@@ -21,9 +21,6 @@ export default function IntroSection() {
         <section className={styles['intro-section']}>
             <div className={styles['intro-img-container']}>
                 <Image src={Avatar} alt='avatar' className={styles['avatar-img']} />
-                {/* <div className={styles['img-text-container']}>
-                    {'</>'} Full-Stack Developer
-                </div> */}
             </div>
             <div className={styles['intro-txt-container']}>
                 <h1>Full-Stack Developer</h1>

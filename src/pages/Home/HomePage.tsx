@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import FAQ from '@/components/FAQ/FAQ';
 import styles from "./Home.module.scss";
 import Header from '@/components/Header/Header';
@@ -22,9 +22,9 @@ export default function Home() {
   };
   return (
     <div className={styles['home-container']}>
-      <Header scrollToSection={scrollToSection} 
-        experienceRef={experienceRef} 
-        faqRef={faqRef}/>
+      <Header scrollToSection={scrollToSection}
+        experienceRef={experienceRef}
+        faqRef={faqRef} />
       <IntroSection />
       <ServiceSection />
       <DescriptionSection />

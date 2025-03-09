@@ -13,6 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Correct path to the favicon */}
+        <link rel="icon" href="/assets/avatar.png" />
+      </head>
       <body>
         {children}
       </body>

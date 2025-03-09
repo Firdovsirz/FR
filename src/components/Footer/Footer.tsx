@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className={styles['footer-container']}>
             <div className={styles['footer-copyright']}>
-                <CopyrightIcon className={styles['footer-copyright-icon']}/>
+                <CopyrightIcon className={styles['footer-copyright-icon']} />
                 Firdovsi Rzaev 2025
             </div>
             <div className={styles['footer-socials']}>

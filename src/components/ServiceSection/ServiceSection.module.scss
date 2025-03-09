@@ -17,6 +17,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1000px) {
+        width: 90%;
+        height: fit-content;
+        padding: 10px;
+        margin: 0 auto;
+    }
 }
 
 .cardInner {
@@ -29,6 +36,10 @@
     overflow: hidden;
     box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 35%);
     transform-origin: center top;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
 }
 
 .cards {
@@ -44,6 +55,11 @@
     display: flex;
     width: 40%;
     flex-shrink: 0;
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
 
 .cardImage {
@@ -51,12 +67,28 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: 1;
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
 }
 
 .cardContent {
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1000px) {
+        padding: 10px;
+    }
+
+    h1 {
+        @media (max-width: 1000px) {
+            font-size: 25px;
+        }
+    }
 }
 
 .cardTitle {

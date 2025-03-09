@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, forwardRef } from "react";
 import styles from "./ExperienceSection.module.scss";
+import React, { useState, forwardRef, useEffect } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const ExperienceSection = forwardRef<HTMLElement, {}>((props, ref) => {
@@ -32,6 +32,19 @@ const ExperienceSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const handleDropdown = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
+  const [width, setWidth] = useState<number>(0);
+    const [marginTop, setMarginTop] = useState<number>(50);
+
+    useEffect(() => {
+        const updateSize = () => {
+            const newWidth = window.innerWidth;
+            setWidth(newWidth);
+            setMarginTop(newWidth < 1000 ? 200 : 50);
+        };
+        updateSize();
+        window.addEventListener("resize", updateSize);
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
 
   return (
     <section ref={ref} className={styles["experience-section"]}>
@@ -62,7 +75,7 @@ const ExperienceSection = forwardRef<HTMLElement, {}>((props, ref) => {
                 style={
                   openDropdown === index
                     ? { marginTop: 0, opacity: 1 }
-                    : { marginTop: "-150px", opacity: 0 }
+                    : { marginTop: `-${marginTop}px`, opacity: 0 }
                 }
               >
                 <h3>{item.jobDoneTitle}</h3>

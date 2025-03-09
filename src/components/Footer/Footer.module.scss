@@ -5,15 +5,24 @@
     padding: 20px 400px;
     margin-top: 80px;
 
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        padding: 20px;
+    }
+
     .footer-copyright {
         display: flex;
         align-items: center;
         justify-content: center;
         color: rgb(166, 166, 166);
 
+        @media (max-width: 1000px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
         .footer-copyright-icon {
             margin-right: 10px;
-            // color: rgb(166, 166, 166);
         }
     }
 
@@ -22,6 +31,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
+
 
         .footer-social-link {
             color: rgb(166, 166, 166);

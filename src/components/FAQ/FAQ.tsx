@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./FAQ.module.scss";
-import React, { useState, forwardRef } from 'react';
+import React, { useState, forwardRef, useEffect } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const FAQ = forwardRef<HTMLElement>((props, ref) => {
@@ -22,6 +22,19 @@ const FAQ = forwardRef<HTMLElement>((props, ref) => {
     const handleDropdown = (index: number) => {
         setOpenDropdown(openDropdown === index ? null : index);
     }
+    const [width, setWidth] = useState<number>(0);
+    const [marginTop, setMarginTop] = useState<number>(50);
+
+    useEffect(() => {
+        const updateSize = () => {
+            const newWidth = window.innerWidth;
+            setWidth(newWidth);
+            setMarginTop(newWidth < 1000 ? 150 : 50);
+        };
+        updateSize();
+        window.addEventListener("resize", updateSize);
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
     return (
         <section ref={ref} className={styles['faq-section']}>
             <div className={styles['faq-container']}>
@@ -35,8 +48,8 @@ const FAQ = forwardRef<HTMLElement>((props, ref) => {
                                     <KeyboardArrowDownIcon style={openDropdown === index ? { rotate: "180deg" } : undefined} className={styles['faq-dropdown-icon']} onClick={() => handleDropdown(index)} />
                                 </div>
                                 <div style={
-                                    openDropdown === index ? { marginTop: 0, opacity: 1 } : { marginTop: "-50px", opacity: 0 }
-                                }>
+                                    openDropdown === index ? { marginTop: 0, opacity: 1, display: 'block' } : { marginTop: `-${marginTop}px`, opacity: 0,display: 'none' }
+                                } className={styles['question-answer-container']}>
                                     <p>{item.answer}</p>
                                 </div>
                             </div>
