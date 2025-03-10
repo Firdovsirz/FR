@@ -16,6 +16,7 @@ export default function RootLayout({
       <head>
         {/* Correct path to the favicon */}
         <link rel="icon" href="/assets/avatar.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body>
         {children}
